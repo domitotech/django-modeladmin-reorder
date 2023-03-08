@@ -55,11 +55,11 @@ class ModelAdminReorder(MiddlewareMixin):
         return ordered_app_list
 
     def make_app(self, app_config):
-        if not isinstance(app_config, (dict, string_types)):
+        if not isinstance(app_config, (dict, str)):
             raise TypeError('ADMIN_REORDER list item must be '
                             'dict or string. Got %s' % repr(app_config))
 
-        if isinstance(app_config, string_types):
+        if isinstance(app_config, str):
             # Keep original label and models
             return self.find_app(app_config)
         else:
